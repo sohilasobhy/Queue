@@ -1,0 +1,1333 @@
+@font-face {
+  font-family: "Alexandria";
+  src: url(../Fonts/Alexandria/Alexandria-VariableFont_wght.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+li,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Alexandria", serif;
+}
+body .sectionHead {
+  border-radius: 1rem;
+  background-color: #4abb82;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px 7px;
+}
+body .sectionHead p {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+body h2 {
+  color: #1d1d35;
+  font-weight: 600;
+}
+@media (min-width: 992px) {
+  body h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body h2 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 768px) {
+  body h2 {
+    font-size: 30px;
+  }
+}
+body .subHead {
+  color: #404f65;
+  font-weight: 300;
+  width: 65%;
+}
+@media (min-width: 992px) {
+  body .subHead {
+    font-size: 18px;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body .subHead {
+    font-size: 17px;
+  }
+}
+@media (max-width: 768px) {
+  body .subHead {
+    font-size: 16px;
+  }
+}
+body nav .navbar {
+  --bs-navbar-toggler-focus-width: 0;
+}
+body nav .collapsing {
+  height: 100vh !important;
+}
+body nav .sideMenu i {
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  body nav .sideMenu.show {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    z-index: 999;
+    padding-top: 1rem;
+  }
+  [dir=ltr] body nav .sideMenu.show {
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+  [dir=rtl] body nav .sideMenu.show {
+    right: 0;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (max-width: 768px) {
+  body nav .sideMenu.show {
+    width: 100%;
+  }
+}
+body nav .nav-link {
+  color: #1d1d35;
+  font-size: 16px;
+  font-weight: 500;
+}
+body nav .nav-link.active, body nav .nav-link:hover {
+  font-weight: 600;
+}
+body nav .navbar-toggler:focus {
+  box-shadow: 0 0 0;
+}
+body nav .dropdown-toggle {
+  color: #1d1d35;
+  font-size: 16px;
+  font-weight: 500;
+}
+body nav .dropdown-toggle:focus {
+  border: 0;
+}
+body nav .dropdown-menu {
+  margin: auto;
+  min-width: 4rem !important;
+}
+body nav .topSideNav {
+  border-bottom: 1px solid #d5dae1;
+}
+body .loginBtn {
+  border: 1px solid #d5dae1;
+  border-radius: 1rem;
+  background-color: transparent;
+  padding: 0.3rem 0.8rem;
+}
+body .loginBtn.navBtn {
+  color: #1d1d35;
+  font-size: 14px;
+  font-weight: 500;
+}
+body .loginBtn.heroBtn {
+  color: #1d1d35;
+}
+@media (min-width: 767px) {
+  body .loginBtn.heroBtn {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  body .loginBtn.heroBtn {
+    font-size: 16px;
+  }
+}
+body .bookBtn {
+  border: 1px solid #d5dae1;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  background-color: #4abb82;
+}
+body .bookBtn.navBtn {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+body .bookBtn.heroBtn {
+  color: #ffffff;
+}
+@media (min-width: 767px) {
+  body .bookBtn.heroBtn {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  body .bookBtn.heroBtn {
+    font-size: 16px;
+  }
+}
+body .heroSection h1 {
+  color: #1d1d35;
+  font-weight: 700;
+}
+@media (min-width: 992px) {
+  body .heroSection h1 {
+    font-size: 56px;
+    width: 70%;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body .heroSection h1 {
+    font-size: 43px;
+    width: 85%;
+  }
+}
+@media (max-width: 768px) {
+  body .heroSection h1 {
+    font-size: 30px;
+    width: 100%;
+  }
+}
+body .store .topImage {
+  background-image: url(../Images/Rectangle\ 79.png);
+}
+body .store .trustedPartners {
+  background-color: rgba(234, 254, 241, 0.3019607843);
+}
+body .store .trustedPartners p {
+  color: #8896ab;
+  font-weight: 300;
+}
+@media (min-width: 767px) {
+  body .store .trustedPartners p {
+    font-size: 21px;
+  }
+}
+@media (max-width: 768px) {
+  body .store .trustedPartners p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 992px) {
+  body .store .trustedPartners .topLogos {
+    gap: 4rem;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 400px) {
+  body .store .trustedPartners .topLogos {
+    gap: 2rem;
+  }
+}
+@media (max-width: 400px) {
+  body .store .trustedPartners .topLogos {
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  body .store .trustedPartners .bottomLogos {
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 400px) {
+  body .store .trustedPartners .bottomLogos {
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+}
+@media (max-width: 400px) {
+  body .store .trustedPartners .bottomLogos {
+    gap: 1.5rem;
+    margin-top: 0rem;
+  }
+}
+@media (min-width: 992px) {
+  body .store .trustedPartners .logosCon {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 400px) {
+  body .store .trustedPartners .logosCon {
+    flex-direction: row-reverse;
+    gap: 3rem;
+  }
+}
+@media (max-width: 400px) {
+  body .store .trustedPartners .logosCon {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+body .Services .nav {
+  border-radius: 2rem;
+  justify-content: space-between;
+}
+@media (min-width: 992px) {
+  body .Services .nav {
+    background-color: #f5f7fa;
+  }
+}
+@media (max-width: 991px) {
+  body .Services .nav {
+    background-color: transparent;
+  }
+}
+body .Services .nav .nav-item {
+  width: 18%;
+}
+body .Services .nav .nav-item .nav-link {
+  color: #556987;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+}
+@media (min-width: 992px) {
+  body .Services .nav .nav-item .nav-link {
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  body .Services .nav .nav-item .nav-link {
+    text-align: start;
+  }
+}
+body .Services .nav .nav-item .nav-link.active {
+  color: #1d1d35;
+}
+@media (min-width: 992px) {
+  body .Services .nav .nav-item .nav-link.active {
+    background-color: white;
+  }
+}
+@media (max-width: 991px) {
+  body .Services .nav .nav-item .nav-link.active {
+    background-color: transparent;
+  }
+}
+body .Services .nav .arrows i {
+  font-size: 30px;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+}
+[dir=ltr] body .Services .nav .arrows i.rightArrow {
+  background-color: #4abb82;
+  color: #ffffff;
+}
+[dir=rtl] body .Services .nav .arrows i.rightArrow {
+  background-color: rgba(238, 240, 243, 0.8);
+  color: #bbc3cf;
+}
+[dir=rtl] body .Services .nav .arrows i.leftArrow {
+  background-color: #4abb82;
+  color: #ffffff;
+}
+[dir=ltr] body .Services .nav .arrows i.leftArrow {
+  background-color: rgba(238, 240, 243, 0.8);
+  color: #bbc3cf;
+}
+@media (min-width: 992px) {
+  body .Services .leftPart {
+    width: 45%;
+  }
+}
+body .Services .leftPart .points {
+  color: #333f51;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .Services .leftPart .points {
+    font-size: 20px;
+  }
+}
+@media (max-width: 991px) {
+  body .Services .leftPart .points {
+    font-size: 16px;
+  }
+}
+body .Services .leftPart a {
+  text-decoration: underline;
+  color: #4abb82;
+  font-size: 18px;
+  font-weight: 500;
+}
+[dir=rtl] body .QueueFields .starIcon {
+  position: absolute;
+  top: -35px;
+  left: 0;
+}
+[dir=ltr] body .QueueFields .starIcon {
+  position: absolute;
+  top: -35px;
+  left: 55px;
+}
+[dir=rtl] body .QueueFields .sparkleIcon {
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+[dir=ltr] body .QueueFields .sparkleIcon {
+  position: absolute;
+  top: -35px;
+  right: 55px;
+}
+@media (min-width: 992px) {
+  body .QueueFields .fieldsCon .oneCard {
+    width: 280px;
+  }
+}
+@media (max-width: 991px) {
+  body .QueueFields .fieldsCon .oneCard {
+    width: 160px;
+  }
+}
+body .QueueFields .fieldsCon .oneCard .title {
+  color: #1d1d35;
+  font-size: 14px;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  body .QueueFields .fieldsCon .oneCard .title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body .QueueFields .fieldsCon .oneCard .title {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 768px) {
+  body .QueueFields .fieldsCon .oneCard .title {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+body .QueueFields .fieldsCon .oneCard .subTitle {
+  color: #404f65;
+  font-size: 14px;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .QueueFields .fieldsCon .oneCard .subTitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body .QueueFields .fieldsCon .oneCard .subTitle {
+    font-size: 13px;
+  }
+}
+@media (max-width: 768px) {
+  body .QueueFields .fieldsCon .oneCard .subTitle {
+    font-size: 10px;
+  }
+}
+body .QueueFields .fieldsCon .oneCard.restaurants {
+  box-shadow: 0 40px 70px rgba(120, 120, 120, 0.1098039216);
+}
+@media (min-width: 400px) {
+  body .QueueFields .fieldsCon {
+    flex-direction: row;
+  }
+}
+@media (max-width: 399px) {
+  body .QueueFields .fieldsCon {
+    flex-direction: column;
+  }
+}
+body .features {
+  background-color: rgba(234, 254, 241, 0.3294117647);
+}
+body .features .featuresCon {
+  width: 90%;
+}
+body .features .oneCard {
+  border-radius: 0.5rem;
+  height: 250px;
+  width: 300px;
+}
+body .features .oneCard .title {
+  color: #1d1d35;
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (min-width: 992px) {
+  body .features .oneCard .title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 991.86px) and (min-width: 768px) {
+  body .features .oneCard .title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 768px) {
+  body .features .oneCard .title {
+    font-size: 20px;
+  }
+}
+body .features .oneCard .subTitle {
+  color: #1d1d35;
+  font-size: 16px;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .features .oneCard.active {
+    background-color: #4abb82;
+  }
+}
+@media (min-width: 992px) {
+  body .features .oneCard.active .title,
+  body .features .oneCard.active .subTitle {
+    color: white;
+  }
+}
+body .features .oneCard .icon {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 50%;
+}
+body .pricing .pricingPlans {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans {
+    background-image: url(../Images/bg-2.png), url(../Images/bg-1.png);
+    background-position: left top, right top;
+    background-repeat: no-repeat, no-repeat;
+  }
+}
+body .pricing .pricingPlans .plans .plan {
+  border-radius: 0.8rem;
+  height: 600px;
+  border: 1px #d5dae1 solid;
+  width: 320px;
+}
+body .pricing .pricingPlans .plans .plan .topPart {
+  height: 150px;
+}
+body .pricing .pricingPlans .plans .plan ul li {
+  list-style-type: none;
+}
+body .pricing .pricingPlans .plans .plan.Enterprise, body .pricing .pricingPlans .plans .plan.Pro {
+  background-color: white;
+}
+body .pricing .pricingPlans .plans .plan.Enterprise ul li, body .pricing .pricingPlans .plans .plan.Pro ul li {
+  color: #1d1d35;
+  font-size: 16px;
+  font-weight: 300;
+}
+body .pricing .pricingPlans .plans .plan.Enterprise .head .iconCon, body .pricing .pricingPlans .plans .plan.Pro .head .iconCon {
+  background-color: rgba(238, 240, 243, 0.5019607843);
+  border-radius: 50%;
+  padding: 10px;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .pricing .pricingPlans .plans .plan.Enterprise .name, body .pricing .pricingPlans .plans .plan.Pro .name {
+  color: #1d1d35;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .name, body .pricing .pricingPlans .plans .plan.Pro .name {
+    font-size: 48px;
+    font-weight: 500;
+  }
+}
+@media (max-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .name, body .pricing .pricingPlans .plans .plan.Pro .name {
+    font-size: 35px;
+    font-weight: 600;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Enterprise .name span, body .pricing .pricingPlans .plans .plan.Pro .name span {
+  color: #8896ab;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .name span, body .pricing .pricingPlans .plans .plan.Pro .name span {
+    font-size: 20px;
+  }
+}
+@media (max-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .name span, body .pricing .pricingPlans .plans .plan.Pro .name span {
+    font-size: 15px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Enterprise .sideTitle, body .pricing .pricingPlans .plans .plan.Pro .sideTitle {
+  color: #556987;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .sideTitle, body .pricing .pricingPlans .plans .plan.Pro .sideTitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .sideTitle, body .pricing .pricingPlans .plans .plan.Pro .sideTitle {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Enterprise button, body .pricing .pricingPlans .plans .plan.Pro button {
+  background-color: transparent;
+  border: #d5dae1 1px solid;
+  border-radius: 1rem;
+  padding: 5px 10px;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise button, body .pricing .pricingPlans .plans .plan.Pro button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise button, body .pricing .pricingPlans .plans .plan.Pro button {
+    font-size: 13px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Enterprise .planName, body .pricing .pricingPlans .plans .plan.Pro .planName {
+  color: #1d1d35;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .planName, body .pricing .pricingPlans .plans .plan.Pro .planName {
+    font-size: 24px;
+  }
+}
+@media (max-width: 991px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .planName, body .pricing .pricingPlans .plans .plan.Pro .planName {
+    font-size: 20px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Enterprise .starting, body .pricing .pricingPlans .plans .plan.Pro .starting {
+  color: #8896ab;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .starting, body .pricing .pricingPlans .plans .plan.Pro .starting {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  body .pricing .pricingPlans .plans .plan.Enterprise .starting, body .pricing .pricingPlans .plans .plan.Pro .starting {
+    font-size: 13px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Starter {
+  background-color: #1d1d35;
+}
+body .pricing .pricingPlans .plans .plan.Starter .head .iconCon {
+  background-color: #29293f;
+  border-radius: 50%;
+  padding: 10px;
+  width: 55px;
+  height: 55px;
+}
+body .pricing .pricingPlans .plans .plan.Starter .name {
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .name {
+    font-size: 48px;
+    font-weight: 500;
+  }
+}
+@media (max-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .name {
+    font-size: 35px;
+    font-weight: 600;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Starter .name span {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .name span {
+    font-size: 20px;
+  }
+}
+@media (max-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .name span {
+    font-size: 15px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Starter .sideTitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .sideTitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .sideTitle {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Starter ul li {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+}
+body .pricing .pricingPlans .plans .plan.Starter button {
+  background-color: #3f3f53;
+  border: #d5dae1 1px solid;
+  border-radius: 1rem;
+  padding: 5px 10px;
+  color: white;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  body .pricing .pricingPlans .plans .plan.Starter button {
+    font-size: 13px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Starter .planName {
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .planName {
+    font-size: 24px;
+  }
+}
+@media (max-width: 991px) {
+  body .pricing .pricingPlans .plans .plan.Starter .planName {
+    font-size: 20px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Starter hr {
+  color: rgba(255, 255, 255, 0.3019607843);
+}
+body .pricing .pricingPlans .plans .plan.Starter .popular {
+  background-color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 1rem;
+  color: #34345e;
+  font-weight: 400;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .popular {
+    font-size: 12px;
+  }
+}
+@media (max-width: 991px) {
+  body .pricing .pricingPlans .plans .plan.Starter .popular {
+    font-size: 10px;
+  }
+}
+body .pricing .pricingPlans .plans .plan.Starter .starting {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .pricing .pricingPlans .plans .plan.Starter .starting {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  body .pricing .pricingPlans .plans .plan.Starter .starting {
+    font-size: 13px;
+  }
+}
+body .Testimonial {
+  position: relative;
+}
+body .Testimonial .topQuotation {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+@media (max-width: 991px) {
+  body .Testimonial .topQuotation {
+    display: none;
+  }
+}
+body .Testimonial .bottomQuptation {
+  position: absolute;
+  top: 35%;
+  right: 15%;
+}
+@media (max-width: 991px) {
+  body .Testimonial .bottomQuptation {
+    display: none;
+  }
+}
+body .Testimonial .quote {
+  color: #1d1d35;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  body .Testimonial .quote {
+    font-size: 30px;
+    width: 60%;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  body .Testimonial .quote {
+    font-size: 18px;
+    width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  body .Testimonial .quote {
+    font-size: 18px;
+    width: 100%;
+  }
+}
+body .Testimonial .userName {
+  color: #1d1d35;
+  font-weight: 400;
+}
+@media (max-width: 992px) {
+  body .Testimonial .userName {
+    font-size: 24px;
+  }
+}
+@media (max-width: 991px) {
+  body .Testimonial .userName {
+    font-size: 13px;
+  }
+}
+body .Testimonial .job {
+  color: #404f65;
+  font-weight: 300;
+}
+@media (max-width: 992px) {
+  body .Testimonial .job {
+    font-size: 18px;
+  }
+}
+@media (max-width: 991px) {
+  body .Testimonial .job {
+    font-size: 10px;
+  }
+}
+body .Testimonial button {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  opacity: 1;
+}
+@media (min-width: 992px) {
+  body .Testimonial button {
+    top: 50%;
+  }
+}
+@media (max-width: 991px) {
+  body .Testimonial button {
+    top: auto;
+    bottom: -80px;
+  }
+}
+body .Testimonial .carousel-control-next,
+body .Testimonial .carousel-control-prev {
+  background-color: #4abb82;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .Testimonial .carousel-control-next svg path,
+body .Testimonial .carousel-control-prev svg path {
+  fill: white;
+}
+@media (min-width: 992px) {
+  body .Testimonial .carousel-control-next,
+  body .Testimonial .carousel-control-prev {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 991px) {
+  body .Testimonial .carousel-control-next,
+  body .Testimonial .carousel-control-prev {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (min-width: 992px) {
+  [dir=ltr] body .Testimonial .carousel-control-next {
+    right: 0;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  [dir=ltr] body .Testimonial .carousel-control-next {
+    right: 45.5%;
+  }
+}
+@media (max-width: 768px) {
+  [dir=ltr] body .Testimonial .carousel-control-next {
+    right: 38%;
+  }
+}
+@media (min-width: 992px) {
+  [dir=rtl] body .Testimonial .carousel-control-next {
+    left: 0;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  [dir=rtl] body .Testimonial .carousel-control-next {
+    left: 45.5%;
+  }
+}
+@media (max-width: 768px) {
+  [dir=rtl] body .Testimonial .carousel-control-next {
+    left: 38%;
+  }
+}
+@media (min-width: 992px) {
+  [dir=ltr] body .Testimonial .carousel-control-prev {
+    left: 0;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  [dir=ltr] body .Testimonial .carousel-control-prev {
+    left: 45.5%;
+  }
+}
+@media (max-width: 768px) {
+  [dir=ltr] body .Testimonial .carousel-control-prev {
+    left: 38%;
+  }
+}
+@media (min-width: 992px) {
+  [dir=rtl] body .Testimonial .carousel-control-prev {
+    right: 0;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  [dir=rtl] body .Testimonial .carousel-control-prev {
+    right: 45.5%;
+  }
+}
+@media (max-width: 768px) {
+  [dir=rtl] body .Testimonial .carousel-control-prev {
+    right: 38%;
+  }
+}
+body .Testimonial .carousel-control-prev.disabled,
+body .Testimonial .carousel-control-next.disabled {
+  background-color: rgba(238, 240, 243, 0.8) !important;
+}
+body .Testimonial .carousel-control-prev.disabled svg path,
+body .Testimonial .carousel-control-next.disabled svg path {
+  fill: #bbc3cf;
+}
+@media (min-width: 992px) {
+  body .Testimonial .carousel-indicators {
+    bottom: -55px;
+  }
+}
+@media (max-width: 991px) {
+  body .Testimonial .carousel-indicators {
+    bottom: -150px;
+  }
+}
+body .Testimonial .carousel-indicators button {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background-color: #bbc3cf !important;
+}
+body .Testimonial .carousel-indicators button.active {
+  background-color: #4abb82 !important;
+}
+body .Testimonial hr {
+  border-top-color: #d5dae1;
+  background-color: #d5dae1;
+  width: 100%;
+  height: 2px;
+}
+@media (min-width: 992px) {
+  body .Testimonial hr {
+    margin-top: 70px;
+  }
+}
+@media (max-width: 991px) {
+  body .Testimonial hr {
+    margin-top: 150px;
+  }
+}
+body .caseStudy .viewMore {
+  background-color: white;
+  border-radius: 1.5rem;
+  border: #d5dae1 solid 1px;
+  padding: 10px 15px;
+  color: #1d1d35;
+  font-size: 16px;
+  font-weight: 500;
+}
+body .caseStudy .head h3 {
+  color: #1d1d35;
+  font-weight: 600;
+}
+@media (min-width: 992px) {
+  body .caseStudy .head h3 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 991px) {
+  body .caseStudy .head h3 {
+    font-size: 23px;
+  }
+}
+body .caseStudy .head p {
+  color: #333f51;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body .caseStudy .head p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 991px) {
+  body .caseStudy .head p {
+    font-size: 16px;
+  }
+}
+body .caseStudy .oneCard {
+  width: 320px;
+}
+body .caseStudy .oneCard .cardHead {
+  height: 220px;
+}
+body .caseStudy .oneCard .cardHead .mainImg {
+  border-radius: 0.3rem;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .caseStudy .oneCard .cardHead .yellowShape {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  z-index: 3;
+}
+body .caseStudy .oneCard .cardHead .bottomShape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+body .caseStudy .oneCard .cardHead .line1 {
+  position: absolute;
+  top: 32%;
+  right: -1%;
+  z-index: 1;
+}
+body .caseStudy .oneCard .cardHead .line2 {
+  position: absolute;
+  top: 60%;
+  right: -1%;
+  z-index: 1;
+}
+body .caseStudy .oneCard .cardHead .info {
+  background-color: #1d1d35;
+  padding: 0.5rem 0;
+  position: absolute;
+  top: 52%;
+  right: 10px;
+  transform: translate(0, -50%);
+  border-radius: 3rem;
+  z-index: 3;
+}
+body .caseStudy .oneCard .cardHead .info .name {
+  color: #ffffff;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  body .caseStudy .oneCard .cardHead .info .name {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  body .caseStudy .oneCard .cardHead .info .name {
+    font-size: 13px;
+  }
+}
+body .caseStudy .oneCard .cardHead .info .job {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 300;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  body .caseStudy .oneCard .cardHead .info {
+    font-size: 16px;
+    width: 227px;
+  }
+}
+@media (max-width: 991px) {
+  body .caseStudy .oneCard .cardHead .info {
+    font-size: 13px;
+    width: 193px;
+  }
+}
+body .caseStudy .oneCard .cardHead .filter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 46.88%, rgba(0, 0, 0, 0.8) 100%);
+}
+body .caseStudy .oneCard .cardHead .background {
+  position: absolute;
+  top: 44%;
+  right: 4.5%;
+  padding: 0.5rem 0;
+  border-radius: 3rem;
+  background-color: #4abb82;
+  height: 50px;
+  z-index: 2;
+}
+@media (min-width: 992px) {
+  body .caseStudy .oneCard .cardHead .background {
+    width: 220px;
+  }
+}
+@media (max-width: 991px) {
+  body .caseStudy .oneCard .cardHead .background {
+    width: 186px;
+  }
+}
+body .caseStudy .oneCard .cardBody .postDate {
+  color: #8896ab;
+  font-size: 14px;
+  font-weight: 400;
+}
+body .caseStudy .oneCard .cardBody .title {
+  font-size: 24px;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .caseStudy .oneCard .cardBody .mainPost {
+  color: #333f51;
+  font-size: 16px;
+  font-weight: 300;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .caseStudy .oneCard .cardBody .job {
+  color: #8896ab;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #f3f4f5;
+  padding: 5px 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1rem;
+}
+body .FAQ {
+  background-color: rgba(234, 254, 241, 0.3019607843);
+}
+@media (min-width: 992px) {
+  body .FAQ .subHead {
+    width: 40%;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  body .FAQ .subHead {
+    width: 70%;
+  }
+}
+@media (max-width: 767px) {
+  body .FAQ .subHead {
+    width: 100%;
+  }
+}
+body .FAQ .accordion {
+  width: 95%;
+}
+body .FAQ .accordion .accordion-item {
+  background-color: white;
+  border: 1px solid #1d1d35;
+  border-radius: 0.5rem;
+}
+body .FAQ .accordion .accordion-item button {
+  border-radius: 0.5rem !important;
+  box-shadow: 0 0 0;
+  color: #1d1d35;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  body .FAQ .accordion .accordion-item button {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  body .FAQ .accordion .accordion-item button {
+    font-size: 14px;
+  }
+}
+body .FAQ .accordion .accordion-item button::after {
+  background-image: url(../Images/plus.png);
+}
+body .FAQ .accordion .accordion-item .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: #1d1d35;
+}
+body .FAQ .viewMore {
+  background-color: white;
+  border-radius: 1.5rem;
+  border: #d5dae1 solid 1px;
+  padding: 10px 15px;
+  color: #1d1d35;
+  font-size: 16px;
+  font-weight: 500;
+}
+body .getStarted {
+  margin-bottom: -25%;
+}
+body .getStarted img {
+  z-index: -1;
+}
+body footer {
+  background-color: #1d1d35;
+  z-index: 2;
+  min-height: 400px;
+}
+@media (min-width: 992px) {
+  body footer .top {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+@media (max-width: 991px) {
+  body footer .top {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+body footer .top h3 {
+  color: #ffffff;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  body footer .top h3 {
+    font-size: 36px;
+    width: 35%;
+  }
+}
+@media (max-width: 991px) {
+  body footer .top h3 {
+    font-size: 30px;
+    width: 100%;
+  }
+}
+body footer .top P {
+  color: #ffffff;
+  font-weight: 300;
+  line-height: 30px;
+}
+@media (min-width: 992px) {
+  body footer .top P {
+    font-size: 20px;
+    width: 70%;
+  }
+}
+@media (max-width: 991px) {
+  body footer .top P {
+    font-size: 16px;
+    width: 100%;
+  }
+}
+body footer .top input {
+  border-radius: 3rem;
+  background-color: rgba(243, 244, 245, 0.1019607843);
+  padding: 1rem;
+  border: 0;
+}
+body footer .top input:focus {
+  background-color: rgba(243, 244, 245, 0.1019607843);
+  box-shadow: 0 0 0;
+}
+body footer .top input::-moz-placeholder {
+  color: #ffffff;
+  font-weight: 300;
+}
+body footer .top input::placeholder {
+  color: #ffffff;
+  font-weight: 300;
+}
+@media (min-width: 992px) {
+  body footer .top input::-moz-placeholder {
+    font-size: 16px;
+  }
+  body footer .top input::placeholder {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  body footer .top input::-moz-placeholder {
+    font-size: 14px;
+  }
+  body footer .top input::placeholder {
+    font-size: 14px;
+  }
+}
+body footer .top button {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  left: nul;
+  transform: translate(0, -50%);
+  border-radius: 1rem;
+  background-color: #4abb82;
+  padding: 0.3rem 0.8rem;
+  color: #f0fdf4;
+  border: 0;
+}
+@media (min-width: 992px) {
+  body footer .top button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  body footer .top button {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=Index.css.map */
