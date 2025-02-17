@@ -967,13 +967,14 @@ body {
     img {
       z-index: -1;
     }
-    margin-bottom: -25%;
+    margin-bottom: -400px;
   }
   footer {
     background-color: $prim-text-color;
     z-index: 2;
     min-height: 400px;
     .top {
+      min-height: 150px;
       @media (min-width: 992px) {
         padding-right: 4rem;
         padding-left: 4rem;
@@ -1039,6 +1040,30 @@ body {
           @include text-style(null, 14px, null);
         }
       }
+    }
+    .middle{
+      min-height: 100px;
+      .links{
+        a{
+          text-decoration: none;
+          @include text-style(#ffffff,16px,400)
+        }
+      }
+      @media (min-width: 992px) {
+        padding-right: 4rem;
+        padding-left: 4rem;
+      }
+      @media (max-width: 991px) {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+      }
+    }
+    .bottom{
+      // min-height: 80px;
+    }
+    .iconCon{
+      width: fit-content;
+      @include position(absolute,null,5%,5%,null);
     }
   }
 }

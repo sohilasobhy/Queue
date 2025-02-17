@@ -1220,7 +1220,7 @@ body .FAQ .viewMore {
   font-weight: 500;
 }
 body .getStarted {
-  margin-bottom: -25%;
+  margin-bottom: -400px;
 }
 body .getStarted img {
   z-index: -1;
@@ -1229,6 +1229,9 @@ body footer {
   background-color: #1d1d35;
   z-index: 2;
   min-height: 400px;
+}
+body footer .top {
+  min-height: 150px;
 }
 @media (min-width: 992px) {
   body footer .top {
@@ -1330,4 +1333,32 @@ body footer .top button {
   body footer .top button {
     font-size: 14px;
   }
+}
+body footer .middle {
+  min-height: 100px;
+}
+body footer .middle .links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+@media (min-width: 992px) {
+  body footer .middle {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+@media (max-width: 991px) {
+  body footer .middle {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+body footer .iconCon {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
 }/*# sourceMappingURL=Index.css.map */
