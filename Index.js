@@ -6,20 +6,25 @@ document.getElementById('closeMenu').addEventListener('click', function () {
     const menu = document.getElementById('navbarSupportedContent');
     menu.classList.remove('show');
 });
-// document.addEventListener("DOMContentLoaded", function () {
-//     const carousel = document.querySelector("#carouselExampleIndicators");
-//     const prevButton = carousel.querySelector(".carousel-control-prev");
-//     const nextButton = carousel.querySelector(".carousel-control-next");
+$(document).ready(function () {
+    var isRtl = $('html').attr('dir') === 'rtl'; // Check the direction of the page
+    $('.slider').slick({
+        rtl: isRtl,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                }
+            }
+        ]
+    });
+});
 
-//     function updateButtonStyles() {
-//         const activeItem = carousel.querySelector(".carousel-item.active");
-//         const allItems = [...carousel.querySelectorAll(".carousel-item")];
-//         const activeIndex = allItems.indexOf(activeItem);
-
-//         prevButton.classList.toggle("disabled", activeIndex === 0);
-//         nextButton.classList.toggle("disabled", activeIndex === allItems.length - 1);
-//     }
-
-//     carousel.addEventListener("slid.bs.carousel", updateButtonStyles);
-//     updateButtonStyles();
-// });

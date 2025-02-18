@@ -20,6 +20,7 @@ ul {
   padding: 0;
   margin: 0;
 }
+
 body {
   font-family: "Alexandria", serif;
   .sectionHead {
@@ -229,13 +230,21 @@ body {
   .Services {
     .nav {
       border-radius: 2rem;
-      justify-content: space-between;
+      justify-content: flex-start;
       border: 0;
-      @media (min-width: 992px) {
-        background-color: #f5f7fa;
-      }
-      @media (max-width: 991px) {
-        background-color: transparent;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding: 10px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      background-color: #f5f7fa;
+      li {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+        display: flex;
+        justify-content: center;
       }
       .nav-item {
         .nav-link {
@@ -256,37 +265,6 @@ body {
             }
             @media (max-width: 991px) {
               background-color: transparent;
-            }
-          }
-        }
-      }
-      .arrows {
-        i {
-          font-size: 30px;
-          padding: 5px;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          display: flex;
-          cursor: pointer;
-          &.rightArrow {
-            [dir="ltr"] & {
-              background-color: $primary-color;
-              color: #ffffff;
-            }
-            [dir="rtl"] & {
-              background-color: $bg-color;
-              color: #bbc3cf;
-            }
-          }
-          &.leftArrow {
-            [dir="rtl"] & {
-              background-color: $primary-color;
-              color: #ffffff;
-            }
-            [dir="ltr"] & {
-              background-color: $bg-color;
-              color: #bbc3cf;
             }
           }
         }
@@ -383,6 +361,7 @@ body {
       border-radius: 0.5rem;
       height: 250px;
       width: 300px;
+      padding: 1rem;
       .title {
         @include text-style($color: $prim-text-color, $weight: 700);
         @media (min-width: 992px) {
@@ -411,109 +390,16 @@ body {
         border-radius: 50%;
       }
     }
-    button {
-      height: fit-content;
-      width: fit-content;
-      opacity: 1;
-      @media (min-width: 992px) {
-        top: 50%;
-      }
-      @media (max-width: 991px) {
-        top: auto;
-        bottom: -80px;
-      }
-    }
-    .carousel-control-next,
-    .carousel-control-prev {
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      @media (min-width: 992px) {
-        width: 50px;
-        height: 50px;
-      }
-      @media (max-width: 991px) {
-        width: 30px;
-        height: 30px;
-      }
-    }
-    .carousel-control-next {
-      background-color: $primary-color;
-
-      svg {
-        path {
-          fill: white;
-        }
-      }
-      [dir="ltr"] & {
-        @media (min-width: 992px) {
-          right: 0;
-        }
-        @media (max-width: 991px) and (min-width: 768px) {
-          right: 45.5%;
-        }
-        @media (max-width: 768px) {
-          right: 38%;
-        }
-      }
-      [dir="rtl"] & {
-        @media (min-width: 992px) {
-          left: 0;
-        }
-        @media (max-width: 991px) and (min-width: 768px) {
-          left: 45.5%;
-        }
-        @media (max-width: 768px) {
-          left: 38%;
-        }
-      }
-    }
-    .carousel-control-prev {
-      background-color: #eef0f3cc;
-      svg {
-        path {
-          fill: #bbc3cf;
-        }
-      }
-      [dir="ltr"] & {
-        @media (min-width: 992px) {
-          left: 0;
-        }
-        @media (max-width: 991px) and (min-width: 768px) {
-          left: 45.5%;
-        }
-        @media (max-width: 768px) {
-          left: 38%;
-        }
-      }
-      [dir="rtl"] & {
-        @media (min-width: 992px) {
-          right: 0;
-        }
-        @media (max-width: 991px) and (min-width: 768px) {
-          right: 45.5%;
-        }
-        @media (max-width: 768px) {
-          right: 38%;
-        }
-      }
-    }
-    .carousel-indicators {
-      @media (min-width: 992px) {
-        bottom: -55px;
-      }
-      @media (max-width: 991px) {
-        bottom: -150px;
-      }
-      button {
-        width: 12px !important;
-        height: 12px !important;
-        border-radius: 50% !important;
-        background-color: #bbc3cf !important;
-        &.active {
-          background-color: $primary-color !important;
+    .slider {
+      width: 80%;
+      margin: auto;
+      gap: 3rem;
+      .slick-slide {
+        @media (min-width: 769px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: auto;
         }
       }
     }
