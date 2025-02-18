@@ -18,7 +18,7 @@ $(document).ready(function () {
         arrows: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 992,
                 settings: {
                     slidesToShow: 1,
                     adaptiveHeight: true
