@@ -230,6 +230,7 @@ body {
     .nav {
       border-radius: 2rem;
       justify-content: space-between;
+      border: 0;
       @media (min-width: 992px) {
         background-color: #f5f7fa;
       }
@@ -237,7 +238,6 @@ body {
         background-color: transparent;
       }
       .nav-item {
-        width: 18%;
         .nav-link {
           @include text-style(#556987, 20px, 400);
           border-radius: 2rem;
@@ -250,6 +250,7 @@ body {
           }
           &.active {
             color: $prim-text-color;
+            border: 0;
             @media (min-width: 992px) {
               background-color: white;
             }
@@ -373,6 +374,8 @@ body {
   }
   .features {
     background-color: #eafef154;
+    padding-bottom: 150px;
+    padding-top: 50px;
     .featuresCon {
       width: 90%;
     }
@@ -396,20 +399,122 @@ body {
         @include text-style($prim-text-color, 16px, 300);
       }
       &.active {
-        @media (min-width: 992px) {
-          background-color: $primary-color;
-        }
+        background-color: $primary-color;
         .title,
         .subTitle {
-          @media (min-width: 992px) {
-            color: white;
-          }
+          color: white;
         }
       }
       .icon {
         background-color: #ffffff;
         padding: 15px;
         border-radius: 50%;
+      }
+    }
+    button {
+      height: fit-content;
+      width: fit-content;
+      opacity: 1;
+      @media (min-width: 992px) {
+        top: 50%;
+      }
+      @media (max-width: 991px) {
+        top: auto;
+        bottom: -80px;
+      }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (min-width: 992px) {
+        width: 50px;
+        height: 50px;
+      }
+      @media (max-width: 991px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .carousel-control-next {
+      background-color: $primary-color;
+
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      [dir="ltr"] & {
+        @media (min-width: 992px) {
+          right: 0;
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+          right: 45.5%;
+        }
+        @media (max-width: 768px) {
+          right: 38%;
+        }
+      }
+      [dir="rtl"] & {
+        @media (min-width: 992px) {
+          left: 0;
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+          left: 45.5%;
+        }
+        @media (max-width: 768px) {
+          left: 38%;
+        }
+      }
+    }
+    .carousel-control-prev {
+      background-color: #eef0f3cc;
+      svg {
+        path {
+          fill: #bbc3cf;
+        }
+      }
+      [dir="ltr"] & {
+        @media (min-width: 992px) {
+          left: 0;
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+          left: 45.5%;
+        }
+        @media (max-width: 768px) {
+          left: 38%;
+        }
+      }
+      [dir="rtl"] & {
+        @media (min-width: 992px) {
+          right: 0;
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+          right: 45.5%;
+        }
+        @media (max-width: 768px) {
+          right: 38%;
+        }
+      }
+    }
+    .carousel-indicators {
+      @media (min-width: 992px) {
+        bottom: -55px;
+      }
+      @media (max-width: 991px) {
+        bottom: -150px;
+      }
+      button {
+        width: 12px !important;
+        height: 12px !important;
+        border-radius: 50% !important;
+        background-color: #bbc3cf !important;
+        &.active {
+          background-color: $primary-color !important;
+        }
       }
     }
   }
@@ -673,11 +778,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      svg {
-        path {
-          fill: white;
-        }
-      }
+
       @media (min-width: 992px) {
         width: 50px;
         height: 50px;
@@ -688,6 +789,12 @@ body {
       }
     }
     .carousel-control-next {
+      background-color: $primary-color;
+      svg {
+        path {
+          fill: white;
+        }
+      }
       [dir="ltr"] & {
         @media (min-width: 992px) {
           right: 0;
@@ -712,6 +819,12 @@ body {
       }
     }
     .carousel-control-prev {
+      background-color: $bg-color !important;
+      svg {
+        path {
+          fill: #bbc3cf;
+        }
+      }
       [dir="ltr"] & {
         @media (min-width: 992px) {
           left: 0;
@@ -732,15 +845,6 @@ body {
         }
         @media (max-width: 768px) {
           right: 38%;
-        }
-      }
-    }
-    .carousel-control-prev.disabled,
-    .carousel-control-next.disabled {
-      background-color: $bg-color !important;
-      svg {
-        path {
-          fill: #bbc3cf;
         }
       }
     }
@@ -964,15 +1068,65 @@ body {
     }
   }
   .getStarted {
+    gap: 2.5rem;
     img {
       z-index: -1;
     }
-    margin-bottom: -400px;
+    .subHead {
+      @media (min-width: 992px) {
+        width: 35%;
+      }
+    }
+    margin-bottom: -25%;
+    .arrow {
+      position: absolute;
+      [dir="ltr"] & {
+        top: 72px;
+      }
+      [dir="rtl"] & {
+        top: 50px;
+      }
+      @media (min-width: 1300px) {
+        left: 25%;
+      }
+      @media (max-width: 1300px) and (min-width: 1100px) {
+        left: 20%;
+      }
+      @media (max-width: 1100px) and (min-width: 992px) {
+        left: 15%;
+      }
+    }
+    .star {
+      @include position(absolute, null, 11%, null, null);
+      [dir="ltr"] & {
+        top: 22%;
+      }
+      [dir="rtl"] & {
+        top: 16%;
+      }
+    }
+    .shape {
+      @include position(absolute, null, null, null, null);
+      @media (min-width: 1400px) {
+        top: 28%;
+        left: 12%;
+      }
+      @media (max-width: 1400px) and (min-width: 1200px) {
+        top: 28%;
+        left: 4%;
+      }
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
   }
   footer {
     background-color: $prim-text-color;
     z-index: 2;
-    min-height: 400px;
+    min-height: 450px;
+    hr {
+      color: #ffffff80;
+    }
     .top {
       min-height: 150px;
       @media (min-width: 992px) {
@@ -1041,12 +1195,12 @@ body {
         }
       }
     }
-    .middle{
+    .middle {
       min-height: 100px;
-      .links{
-        a{
+      .links {
+        a {
           text-decoration: none;
-          @include text-style(#ffffff,16px,400)
+          @include text-style(#ffffff, 16px, 400);
         }
       }
       @media (min-width: 992px) {
@@ -1058,12 +1212,22 @@ body {
         padding-left: 1.5rem;
       }
     }
-    .bottom{
-      // min-height: 80px;
+    .bottom {
+      min-height: 80px;
+      p {
+        @include text-style(#ffffff, 14px, 400);
+        &.underline {
+          text-decoration: underline;
+        }
+      }
     }
-    .iconCon{
-      width: fit-content;
-      @include position(absolute,null,5%,5%,null);
+    .iconCon {
+      width: 70px;
+      height: 70px;
+      @include position(absolute, null, 5%, 5%, null);
+      padding: 5px;
+      border-radius: 50%;
+      background-color: $primary-color;
     }
   }
 }
