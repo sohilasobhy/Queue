@@ -23,11 +23,13 @@ ul {
 
 body {
   font-family: "Alexandria", serif;
+  .logo {
+    cursor: pointer;
+  }
   .sectionHead {
-    border-radius: 1rem;
+    border-radius: 36px;
     background-color: $primary-color;
-    width: fit-content;
-    padding: 4px 7px;
+    padding: 9px;
     p {
       @include text-style($size: 16px, $color: #ffffff);
     }
@@ -46,7 +48,7 @@ body {
   }
   .subHead {
     @include text-style($subHead-color, null, 300);
-    width: 65%;
+    width: 63%;
     @media (min-width: 992px) {
       @include text-style(null, 18px, null);
     }
@@ -55,6 +57,20 @@ body {
     }
     @media (max-width: 768px) {
       @include text-style(null, 16px, null);
+    }
+  }
+  &.show {
+    .filter {
+      @media (max-width: 992px) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.596);
+        height: 100vh;
+        width: 100%;
+        z-index: 1;
+      }
     }
   }
   nav {
@@ -73,7 +89,6 @@ body {
           position: fixed;
           top: 0;
           height: 100vh;
-          width: 250px;
           background-color: white;
           z-index: 999;
           padding-top: 1rem;
@@ -85,6 +100,9 @@ body {
             right: 0;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
           }
+        }
+        @media (max-width: 992px) and (min-width: 768px) {
+          width: 250px;
         }
         @media (max-width: 768px) {
           width: 100%;
@@ -105,8 +123,15 @@ body {
     }
     .dropdown-toggle {
       @include text-style($size: 16px);
+      border: 0;
       &:focus {
         border: 0;
+        box-shadow: 0 0 0;
+      }
+      &.show {
+        &:focus {
+          border: 0;
+        }
       }
     }
     .dropdown-menu {
@@ -116,12 +141,23 @@ body {
     .topSideNav {
       border-bottom: 1px solid $border-color;
     }
+    .sideNavBtns {
+      button {
+        width: 95%;
+      }
+    }
   }
   .loginBtn {
     border: 1px solid $border-color;
-    border-radius: 1rem;
+    border-radius: 100px;
     background-color: transparent;
-    padding: 0.3rem 0.8rem;
+    padding: 8px 16px;
+    &:hover {
+      background-color: $prim-text-color;
+      color: white !important;
+      border-color: $prim-text-color;
+      transform: scale(1.05);
+    }
     &.navBtn {
       @include text-style($size: 14px, $color: $prim-text-color);
     }
@@ -137,9 +173,14 @@ body {
   }
   .bookBtn {
     border: 1px solid $border-color;
-    padding: 0.3rem 0.8rem;
-    border-radius: 1rem;
+    padding: 8px 16px;
+    border-radius: 100px;
     background-color: $primary-color;
+    &:hover {
+      background-color: #43a047;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
     &.navBtn {
       @include text-style($size: 14px, $color: #ffffff);
     }
@@ -158,16 +199,22 @@ body {
       @include text-style($size: null, $weight: 700);
       @media (min-width: 992px) {
         @include text-style(null, 56px, null);
-        width: 70%;
       }
-      @media (max-width: 991.86px) and (min-width: 768px) {
+      @media (max-width: 992px) and (min-width: 768px) {
         @include text-style(null, 43px, null);
-        width: 85%;
       }
       @media (max-width: 768px) {
         @include text-style(null, 30px, null);
-        width: 100%;
       }
+    }
+    @media (min-width: 992px) {
+      width: 70%;
+    }
+    @media (max-width: 992px) and (min-width: 768px) {
+      width: 85%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
   .store {
@@ -176,10 +223,9 @@ body {
     }
     .trustedPartners {
       background-color: #eafef14d;
-
       p {
         @include text-style($subHead-color2, null, 300);
-        @media (min-width: 767px) {
+        @media (min-width: 768px) {
           @include text-style(null, 21px, null);
         }
         @media (max-width: 768px) {
@@ -190,7 +236,7 @@ body {
         @media (min-width: 992px) {
           gap: 4rem;
         }
-        @media (max-width: 991.86px) and (min-width: 400px) {
+        @media (max-width: 992px) and (min-width: 400px) {
           gap: 2rem;
         }
         @media (max-width: 400px) {
@@ -271,15 +317,12 @@ body {
       }
     }
     .leftPart {
-      @media (min-width: 992px) {
-        width: 45%;
-      }
       .points {
         @include text-style($secondry-text-color, null, 300);
         @media (min-width: 992px) {
           @include text-style(null, 20px, null);
         }
-        @media (max-width: 991px) {
+        @media (max-width: 992px) {
           @include text-style(null, 16px, null);
         }
       }
@@ -308,38 +351,40 @@ body {
     }
     .fieldsCon {
       .oneCard {
-        @media (min-width: 992px) {
-          width: 280px;
-        }
-        @media (max-width: 991px) {
-          width: 160px;
-        }
+        cursor: pointer;
+        padding: 16px;
         .title {
-          @include text-style($color: $prim-text-color);
+          @include text-style($prim-text-color, null, null);
           @media (min-width: 992px) {
             @include text-style(null, 20px, 500);
           }
-          @media (max-width: 991.86px) and (min-width: 768px) {
-            @include text-style(null, 16px, 400);
+          @media (max-width: 992px) and (min-width: 768px) {
+            @include text-style(null, 18px, 400);
           }
           @media (max-width: 768px) {
-            @include text-style(null, 12px, 300);
+            @include text-style(null, 16px, 300);
           }
         }
         .subTitle {
-          @include text-style($color: $subHead-color, $weight: 300);
+          @include text-style($subHead-color, null, 300);
           @media (min-width: 992px) {
             @include text-style(null, 16px, null);
           }
-          @media (max-width: 991.86px) and (min-width: 768px) {
-            @include text-style(null, 13px, null);
+          @media (max-width: 992px) and (min-width: 768px) {
+            @include text-style(null, 14px, null);
           }
           @media (max-width: 768px) {
-            @include text-style(null, 10px, null);
+            @include text-style(null, 12px, null);
           }
         }
-        &.restaurants {
+        &:hover {
           box-shadow: 0 40px 70px #7878781c;
+        }
+        @media (min-width: 992px) {
+          width: 270px;
+        }
+        @media (max-width: 992px) {
+          width: 160px;
         }
       }
       @media (min-width: 400px) {
@@ -354,6 +399,7 @@ body {
     background-color: #eafef154;
     padding-bottom: 150px;
     padding-top: 50px;
+    overflow-x: hidden;
     .featuresCon {
       width: 90%;
     }
@@ -361,13 +407,15 @@ body {
       border-radius: 0.5rem;
       height: 250px;
       width: 300px;
-      padding: 1rem;
+      margin: auto;
+      cursor: pointer;
+      padding: 30px 0;
       .title {
-        @include text-style($color: $prim-text-color, $weight: 700);
+        @include text-style($prim-text-color, null, 700);
         @media (min-width: 992px) {
           @include text-style(null, 24px, null);
         }
-        @media (max-width: 991.86px) and (min-width: 768px) {
+        @media (max-width: 992px) and (min-width: 768px) {
           @include text-style(null, 22px, null);
         }
         @media (max-width: 768px) {
@@ -377,7 +425,7 @@ body {
       .subTitle {
         @include text-style($prim-text-color, 16px, 300);
       }
-      &.active {
+      &:hover {
         background-color: $primary-color;
         .title,
         .subTitle {
@@ -391,16 +439,80 @@ body {
       }
     }
     .slider {
+      position: relative;
       width: 100%;
       margin: auto;
       gap: 3rem;
-      .slick-slide {
-        @media (min-width: 769px) {
+      .slick-arrow {
+        &.prev,
+        &.next {
+          position: absolute;
+          bottom: -50px;
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 50%;
           display: flex;
-          flex-direction: column;
           align-items: center;
-          height: auto;
+          justify-content: center;
+          z-index: 10;
         }
+        &.prev {
+          background-color: #eef0f3cc;
+          [dir="ltr"] & {
+            @media (max-width: 992px) and (min-width: 768px) {
+              left: 43%;
+            }
+            @media (max-width: 768px) and (min-width: 500px) {
+              left: 41%;
+            }
+            @media (max-width: 500px) {
+              left: 36%;
+            }
+          }
+          [dir="rtl"] & {
+            @media (max-width: 992px) and (min-width: 768px) {
+              right: 43%;
+            }
+            @media (max-width: 768px) and (min-width: 500px) {
+              right: 41%;
+            }
+            @media (max-width: 500px) {
+              right: 36%;
+            }
+          }
+        }
+        &.next {
+          background-color: $primary-color;
+          [dir="ltr"] & {
+            @media (max-width: 992px) and (min-width: 768px) {
+              right: 43%;
+            }
+            @media (max-width: 768px) and (min-width: 500px) {
+              right: 41%;
+            }
+            @media (max-width: 500px) {
+              right: 36%;
+            }
+          }
+          [dir="rtl"] & {
+            @media (max-width: 992px) and (min-width: 768px) {
+              left: 43%;
+            }
+            @media (max-width: 768px) and (min-width: 500px) {
+              left: 41%;
+            }
+            @media (max-width: 500px) {
+              left: 36%;
+            }
+          }
+        }
+      }
+      .slick-dots {
+        @media (min-width: 992px) {
+          display: none;
+        }
+        bottom: -110px;
       }
     }
   }
@@ -478,6 +590,12 @@ body {
               border: $border-color 1px solid;
               border-radius: 1rem;
               padding: 5px 10px;
+              &:hover {
+                background-color: #2c3e50;
+                color: white;
+                border-color: #2c3e50;
+                transform: scale(1.05);
+              }
               @media (min-width: 992px) {
                 @include text-style(null, 16px, null);
               }
@@ -552,7 +670,13 @@ body {
               border: $border-color 1px solid;
               border-radius: 1rem;
               padding: 5px 10px;
-              @include text-style(#ffff, null, null);
+              @include text-style(#ffff, null, 500);
+              &:hover {
+                background-color: white;
+                color: $prim-text-color;
+                border-color: white;
+                transform: scale(1.05);
+              }
               @media (min-width: 992px) {
                 @include text-style(null, 16px, null);
               }
@@ -629,7 +753,7 @@ body {
     }
     .userName {
       @include text-style($size: null, $weight: 400);
-      @media (max-width: 992px) {
+      @media (min-width: 992px) {
         @include text-style(null, 24px, null);
       }
       @media (max-width: 991px) {
@@ -638,7 +762,7 @@ body {
     }
     .job {
       @include text-style($subHead-color, null, 300);
-      @media (max-width: 992px) {
+      @media (min-width: 992px) {
         @include text-style(null, 18px, null);
       }
       @media (max-width: 991px) {
@@ -659,7 +783,6 @@ body {
     }
     .carousel-control-next,
     .carousel-control-prev {
-      background-color: $primary-color;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -685,22 +808,28 @@ body {
         @media (min-width: 992px) {
           right: 0;
         }
-        @media (max-width: 991px) and (min-width: 768px) {
-          right: 45.5%;
+        @media (max-width: 992px) and (min-width: 768px) {
+          right: 43%;
         }
-        @media (max-width: 768px) {
-          right: 38%;
+        @media (max-width: 768px) and (min-width: 500px) {
+          right: 41%;
+        }
+        @media (max-width: 500px) {
+          right: 36%;
         }
       }
       [dir="rtl"] & {
         @media (min-width: 992px) {
           left: 0;
         }
-        @media (max-width: 991px) and (min-width: 768px) {
-          left: 45.5%;
+        @media (max-width: 992px) and (min-width: 768px) {
+          left: 43%;
         }
-        @media (max-width: 768px) {
-          left: 38%;
+        @media (max-width: 768px) and (min-width: 500px) {
+          left: 41%;
+        }
+        @media (max-width: 500px) {
+          left: 36%;
         }
       }
     }
@@ -715,22 +844,28 @@ body {
         @media (min-width: 992px) {
           left: 0;
         }
-        @media (max-width: 991px) and (min-width: 768px) {
-          left: 45.5%;
+        @media (max-width: 992px) and (min-width: 768px) {
+          left: 43%;
         }
-        @media (max-width: 768px) {
-          left: 38%;
+        @media (max-width: 768px) and (min-width: 500px) {
+          left: 41%;
+        }
+        @media (max-width: 500px) {
+          left: 36%;
         }
       }
       [dir="rtl"] & {
         @media (min-width: 992px) {
           right: 0;
         }
-        @media (max-width: 991px) and (min-width: 768px) {
-          right: 45.5%;
+        @media (max-width: 992px) and (min-width: 768px) {
+          right: 43%;
         }
-        @media (max-width: 768px) {
-          right: 38%;
+        @media (max-width: 768px) and (min-width: 500px) {
+          right: 41%;
+        }
+        @media (max-width: 500px) {
+          right: 36%;
         }
       }
     }
@@ -767,14 +902,20 @@ body {
   .caseStudy {
     .viewMore {
       background-color: white;
-      border-radius: 1.5rem;
+      border-radius: 100px;
       border: $border-color solid 1px;
-      padding: 10px 15px;
+      padding: 16px 25px;
       @include text-style($size: 16px);
+      &:hover {
+        background-color: $prim-text-color;
+        color: white !important;
+        border-color: $prim-text-color;
+        transform: scale(1.05);
+      }
     }
     .head {
       h3 {
-        @include text-style($size: null, $weight: 600);
+        @include text-style($prim-text-color, null, 600);
         @media (min-width: 992px) {
           @include text-style(null, 36px, null);
         }
@@ -886,6 +1027,10 @@ body {
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
         }
         .mainPost {
           @include text-style($secondry-text-color, 16px, 300);
@@ -927,7 +1072,7 @@ body {
         button {
           border-radius: 0.5rem !important;
           box-shadow: 0 0 0;
-          @include text-style($size: null);
+          @include text-style($prim-text-color, null, 500);
           @media (min-width: 768px) {
             @include text-style(null, 18px, null);
           }
@@ -947,43 +1092,60 @@ body {
     }
     .viewMore {
       background-color: white;
-      border-radius: 1.5rem;
+      border-radius: 100px;
       border: $border-color solid 1px;
-      padding: 10px 15px;
+      padding: 20px 23px;
       @include text-style($size: 16px);
+      &:hover {
+        background-color: $prim-text-color;
+        color: white !important;
+        border-color: $prim-text-color;
+        transform: scale(1.05);
+      }
     }
   }
   .getStarted {
     gap: 2.5rem;
-    img {
-      z-index: -1;
-    }
+    z-index: -1;
+    margin-bottom: -25%;
     .subHead {
       @media (min-width: 992px) {
         width: 35%;
       }
     }
-    margin-bottom: -25%;
     .arrow {
       position: absolute;
       [dir="ltr"] & {
-        top: 72px;
+        @media (min-width: 1300px) {
+          left: 23%;
+          top: 72px;
+        }
+        @media (max-width: 1300px) and (min-width: 1200px) {
+          left: 19%;
+          top: 72px;
+        }
+        @media (max-width: 1200px) and (min-width: 992px) {
+          left: 15%;
+          top: 100px;
+        }
       }
       [dir="rtl"] & {
-        top: 50px;
-      }
-      @media (min-width: 1300px) {
-        left: 25%;
-      }
-      @media (max-width: 1300px) and (min-width: 1100px) {
-        left: 20%;
-      }
-      @media (max-width: 1100px) and (min-width: 992px) {
-        left: 15%;
+        @media (min-width: 1300px) {
+          top: 50px;
+          left: 22%;
+        }
+        @media (max-width: 1300px) and (min-width: 1200px) {
+          top: 70px;
+          left: 18%;
+        }
+        @media (max-width: 1200px) and (min-width: 992px) {
+          top: 73px;
+          left: 12%;
+        }
       }
     }
     .star {
-      @include position(absolute, null, 11%, null, null);
+      @include position(absolute, null, 7%, null, null);
       [dir="ltr"] & {
         top: 22%;
       }
@@ -995,11 +1157,11 @@ body {
       @include position(absolute, null, null, null, null);
       @media (min-width: 1400px) {
         top: 28%;
-        left: 12%;
+        left: 7%;
       }
       @media (max-width: 1400px) and (min-width: 1200px) {
         top: 28%;
-        left: 4%;
+        left: 0%;
       }
       @media (max-width: 1200px) {
         display: none;
@@ -1008,8 +1170,7 @@ body {
   }
   footer {
     background-color: $prim-text-color;
-    z-index: 2;
-    min-height: 450px;
+    // height: 150%;
     hr {
       color: #ffffff80;
     }
@@ -1048,12 +1209,14 @@ body {
       }
       input {
         border-radius: 3rem;
-        background-color: #f3f4f51a;
+        background-color: rgba(243, 244, 245, 0.1);
         padding: 1rem;
         border: 0;
+        color: white !important;
+        caret-color: white;
         &:focus {
-          background-color: #f3f4f51a;
-          box-shadow: 0 0 0;
+          background-color: rgba(243, 244, 245, 0.1);
+          box-shadow: none;
         }
         &::placeholder {
           @include text-style(#ffffff, null, 300);
@@ -1065,6 +1228,7 @@ body {
           }
         }
       }
+
       button {
         @include position(absolute, 50%, 2%, null, nul);
         transform: translate(0, -50%);
@@ -1089,6 +1253,11 @@ body {
           @include text-style(#ffffff, 16px, 400);
         }
       }
+      .icons {
+        svg {
+          cursor: pointer;
+        }
+      }
       @media (min-width: 992px) {
         padding-right: 4rem;
         padding-left: 4rem;
@@ -1104,16 +1273,18 @@ body {
         @include text-style(#ffffff, 14px, 400);
         &.underline {
           text-decoration: underline;
+          cursor: pointer;
         }
       }
     }
-    .iconCon {
-      width: 70px;
-      height: 70px;
-      @include position(absolute, null, 5%, 5%, null);
-      padding: 5px;
-      border-radius: 50%;
-      background-color: $primary-color;
-    }
+  }
+  .fixedIcon {
+    width: 70px;
+    height: 70px;
+    @include position(fixed, null, 3%, 5%, null);
+    padding: 5px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    z-index: 999;
   }
 }

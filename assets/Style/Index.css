@@ -25,12 +25,13 @@ ul {
 body {
   font-family: "Alexandria", serif;
 }
+body .logo {
+  cursor: pointer;
+}
 body .sectionHead {
-  border-radius: 1rem;
+  border-radius: 36px;
   background-color: #4abb82;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 4px 7px;
+  padding: 9px;
 }
 body .sectionHead p {
   color: #ffffff;
@@ -59,7 +60,7 @@ body h2 {
 body .subHead {
   color: #404f65;
   font-weight: 300;
-  width: 65%;
+  width: 63%;
 }
 @media (min-width: 992px) {
   body .subHead {
@@ -76,6 +77,18 @@ body .subHead {
     font-size: 16px;
   }
 }
+@media (max-width: 992px) {
+  body.show .filter {
+    position: fixed;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.596);
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+  }
+}
 body nav .navbar {
   --bs-navbar-toggler-focus-width: 0;
 }
@@ -90,7 +103,6 @@ body nav .sideMenu i {
     position: fixed;
     top: 0;
     height: 100vh;
-    width: 250px;
     background-color: white;
     z-index: 999;
     padding-top: 1rem;
@@ -102,6 +114,11 @@ body nav .sideMenu i {
   [dir=rtl] body nav .sideMenu.show {
     right: 0;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  body nav .sideMenu.show {
+    width: 250px;
   }
 }
 @media (max-width: 768px) {
@@ -124,8 +141,13 @@ body nav .dropdown-toggle {
   color: #1d1d35;
   font-size: 16px;
   font-weight: 500;
+  border: 0;
 }
 body nav .dropdown-toggle:focus {
+  border: 0;
+  box-shadow: 0 0 0;
+}
+body nav .dropdown-toggle.show:focus {
   border: 0;
 }
 body nav .dropdown-menu {
@@ -135,11 +157,20 @@ body nav .dropdown-menu {
 body nav .topSideNav {
   border-bottom: 1px solid #d5dae1;
 }
+body nav .sideNavBtns button {
+  width: 95%;
+}
 body .loginBtn {
   border: 1px solid #d5dae1;
-  border-radius: 1rem;
+  border-radius: 100px;
   background-color: transparent;
-  padding: 0.3rem 0.8rem;
+  padding: 8px 16px;
+}
+body .loginBtn:hover {
+  background-color: #1d1d35;
+  color: white !important;
+  border-color: #1d1d35;
+  transform: scale(1.05);
 }
 body .loginBtn.navBtn {
   color: #1d1d35;
@@ -161,9 +192,14 @@ body .loginBtn.heroBtn {
 }
 body .bookBtn {
   border: 1px solid #d5dae1;
-  padding: 0.3rem 0.8rem;
-  border-radius: 1rem;
+  padding: 8px 16px;
+  border-radius: 100px;
   background-color: #4abb82;
+}
+body .bookBtn:hover {
+  background-color: #43a047;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 body .bookBtn.navBtn {
   color: #ffffff;
@@ -190,18 +226,30 @@ body .heroSection h1 {
 @media (min-width: 992px) {
   body .heroSection h1 {
     font-size: 56px;
-    width: 70%;
   }
 }
-@media (max-width: 991.86px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   body .heroSection h1 {
     font-size: 43px;
-    width: 85%;
   }
 }
 @media (max-width: 768px) {
   body .heroSection h1 {
     font-size: 30px;
+  }
+}
+@media (min-width: 992px) {
+  body .heroSection {
+    width: 70%;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  body .heroSection {
+    width: 85%;
+  }
+}
+@media (max-width: 768px) {
+  body .heroSection {
     width: 100%;
   }
 }
@@ -215,7 +263,7 @@ body .store .trustedPartners p {
   color: #8896ab;
   font-weight: 300;
 }
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   body .store .trustedPartners p {
     font-size: 21px;
   }
@@ -230,7 +278,7 @@ body .store .trustedPartners p {
     gap: 4rem;
   }
 }
-@media (max-width: 991.86px) and (min-width: 400px) {
+@media (max-width: 992px) and (min-width: 400px) {
   body .store .trustedPartners .topLogos {
     gap: 2rem;
   }
@@ -326,11 +374,6 @@ body .Services .nav .nav-item .nav-link.active {
     background-color: transparent;
   }
 }
-@media (min-width: 992px) {
-  body .Services .leftPart {
-    width: 45%;
-  }
-}
 body .Services .leftPart .points {
   color: #333f51;
   font-weight: 300;
@@ -340,7 +383,7 @@ body .Services .leftPart .points {
     font-size: 20px;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   body .Services .leftPart .points {
     font-size: 16px;
   }
@@ -371,20 +414,12 @@ body .Services .leftPart a {
   top: -35px;
   right: 55px;
 }
-@media (min-width: 992px) {
-  body .QueueFields .fieldsCon .oneCard {
-    width: 280px;
-  }
-}
-@media (max-width: 991px) {
-  body .QueueFields .fieldsCon .oneCard {
-    width: 160px;
-  }
+body .QueueFields .fieldsCon .oneCard {
+  cursor: pointer;
+  padding: 16px;
 }
 body .QueueFields .fieldsCon .oneCard .title {
   color: #1d1d35;
-  font-size: 14px;
-  font-weight: 500;
 }
 @media (min-width: 992px) {
   body .QueueFields .fieldsCon .oneCard .title {
@@ -392,21 +427,20 @@ body .QueueFields .fieldsCon .oneCard .title {
     font-weight: 500;
   }
 }
-@media (max-width: 991.86px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   body .QueueFields .fieldsCon .oneCard .title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
   }
 }
 @media (max-width: 768px) {
   body .QueueFields .fieldsCon .oneCard .title {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 300;
   }
 }
 body .QueueFields .fieldsCon .oneCard .subTitle {
   color: #404f65;
-  font-size: 14px;
   font-weight: 300;
 }
 @media (min-width: 992px) {
@@ -414,18 +448,28 @@ body .QueueFields .fieldsCon .oneCard .subTitle {
     font-size: 16px;
   }
 }
-@media (max-width: 991.86px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   body .QueueFields .fieldsCon .oneCard .subTitle {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
   body .QueueFields .fieldsCon .oneCard .subTitle {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
-body .QueueFields .fieldsCon .oneCard.restaurants {
+body .QueueFields .fieldsCon .oneCard:hover {
   box-shadow: 0 40px 70px rgba(120, 120, 120, 0.1098039216);
+}
+@media (min-width: 992px) {
+  body .QueueFields .fieldsCon .oneCard {
+    width: 270px;
+  }
+}
+@media (max-width: 992px) {
+  body .QueueFields .fieldsCon .oneCard {
+    width: 160px;
+  }
 }
 @media (min-width: 400px) {
   body .QueueFields .fieldsCon {
@@ -441,6 +485,7 @@ body .features {
   background-color: rgba(234, 254, 241, 0.3294117647);
   padding-bottom: 150px;
   padding-top: 50px;
+  overflow-x: hidden;
 }
 body .features .featuresCon {
   width: 90%;
@@ -449,11 +494,12 @@ body .features .oneCard {
   border-radius: 0.5rem;
   height: 250px;
   width: 300px;
-  padding: 1rem;
+  margin: auto;
+  cursor: pointer;
+  padding: 30px 0;
 }
 body .features .oneCard .title {
   color: #1d1d35;
-  font-size: 14px;
   font-weight: 700;
 }
 @media (min-width: 992px) {
@@ -461,7 +507,7 @@ body .features .oneCard .title {
     font-size: 24px;
   }
 }
-@media (max-width: 991.86px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   body .features .oneCard .title {
     font-size: 22px;
   }
@@ -476,11 +522,11 @@ body .features .oneCard .subTitle {
   font-size: 16px;
   font-weight: 300;
 }
-body .features .oneCard.active {
+body .features .oneCard:hover {
   background-color: #4abb82;
 }
-body .features .oneCard.active .title,
-body .features .oneCard.active .subTitle {
+body .features .oneCard:hover .title,
+body .features .oneCard:hover .subTitle {
   color: white;
 }
 body .features .oneCard .icon {
@@ -489,16 +535,95 @@ body .features .oneCard .icon {
   border-radius: 50%;
 }
 body .features .slider {
+  position: relative;
   width: 100%;
   margin: auto;
   gap: 3rem;
 }
-@media (min-width: 769px) {
-  body .features .slider .slick-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
+body .features .slider .slick-arrow.prev, body .features .slider .slick-arrow.next {
+  position: absolute;
+  bottom: -50px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+body .features .slider .slick-arrow.prev {
+  background-color: rgba(238, 240, 243, 0.8);
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  [dir=ltr] body .features .slider .slick-arrow.prev {
+    left: 43%;
+  }
+}
+@media (max-width: 768px) and (min-width: 500px) {
+  [dir=ltr] body .features .slider .slick-arrow.prev {
+    left: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=ltr] body .features .slider .slick-arrow.prev {
+    left: 36%;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  [dir=rtl] body .features .slider .slick-arrow.prev {
+    right: 43%;
+  }
+}
+@media (max-width: 768px) and (min-width: 500px) {
+  [dir=rtl] body .features .slider .slick-arrow.prev {
+    right: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=rtl] body .features .slider .slick-arrow.prev {
+    right: 36%;
+  }
+}
+body .features .slider .slick-arrow.next {
+  background-color: #4abb82;
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  [dir=ltr] body .features .slider .slick-arrow.next {
+    right: 43%;
+  }
+}
+@media (max-width: 768px) and (min-width: 500px) {
+  [dir=ltr] body .features .slider .slick-arrow.next {
+    right: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=ltr] body .features .slider .slick-arrow.next {
+    right: 36%;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  [dir=rtl] body .features .slider .slick-arrow.next {
+    left: 43%;
+  }
+}
+@media (max-width: 768px) and (min-width: 500px) {
+  [dir=rtl] body .features .slider .slick-arrow.next {
+    left: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=rtl] body .features .slider .slick-arrow.next {
+    left: 36%;
+  }
+}
+body .features .slider .slick-dots {
+  bottom: -110px;
+}
+@media (min-width: 992px) {
+  body .features .slider .slick-dots {
+    display: none;
   }
 }
 body .pricing .pricingPlans {
@@ -590,6 +715,12 @@ body .pricing .pricingPlans .plans .plan.Enterprise button, body .pricing .prici
   border: #d5dae1 1px solid;
   border-radius: 1rem;
   padding: 5px 10px;
+}
+body .pricing .pricingPlans .plans .plan.Enterprise button:hover, body .pricing .pricingPlans .plans .plan.Pro button:hover {
+  background-color: #2c3e50;
+  color: white;
+  border-color: #2c3e50;
+  transform: scale(1.05);
 }
 @media (min-width: 992px) {
   body .pricing .pricingPlans .plans .plan.Enterprise button, body .pricing .pricingPlans .plans .plan.Pro button {
@@ -694,6 +825,13 @@ body .pricing .pricingPlans .plans .plan.Starter button {
   border-radius: 1rem;
   padding: 5px 10px;
   color: white;
+  font-weight: 500;
+}
+body .pricing .pricingPlans .plans .plan.Starter button:hover {
+  background-color: white;
+  color: #1d1d35;
+  border-color: white;
+  transform: scale(1.05);
 }
 @media (min-width: 992px) {
   body .pricing .pricingPlans .plans .plan.Starter button {
@@ -801,7 +939,7 @@ body .Testimonial .userName {
   color: #1d1d35;
   font-weight: 400;
 }
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   body .Testimonial .userName {
     font-size: 24px;
   }
@@ -815,7 +953,7 @@ body .Testimonial .job {
   color: #404f65;
   font-weight: 300;
 }
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   body .Testimonial .job {
     font-size: 18px;
   }
@@ -845,7 +983,6 @@ body .Testimonial button {
 }
 body .Testimonial .carousel-control-next,
 body .Testimonial .carousel-control-prev {
-  background-color: #4abb82;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -876,14 +1013,19 @@ body .Testimonial .carousel-control-next svg path {
     right: 0;
   }
 }
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   [dir=ltr] body .Testimonial .carousel-control-next {
-    right: 45.5%;
+    right: 43%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 500px) {
   [dir=ltr] body .Testimonial .carousel-control-next {
-    right: 38%;
+    right: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=ltr] body .Testimonial .carousel-control-next {
+    right: 36%;
   }
 }
 @media (min-width: 992px) {
@@ -891,14 +1033,19 @@ body .Testimonial .carousel-control-next svg path {
     left: 0;
   }
 }
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   [dir=rtl] body .Testimonial .carousel-control-next {
-    left: 45.5%;
+    left: 43%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 500px) {
   [dir=rtl] body .Testimonial .carousel-control-next {
-    left: 38%;
+    left: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=rtl] body .Testimonial .carousel-control-next {
+    left: 36%;
   }
 }
 body .Testimonial .carousel-control-prev {
@@ -912,14 +1059,19 @@ body .Testimonial .carousel-control-prev svg path {
     left: 0;
   }
 }
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   [dir=ltr] body .Testimonial .carousel-control-prev {
-    left: 45.5%;
+    left: 43%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 500px) {
   [dir=ltr] body .Testimonial .carousel-control-prev {
-    left: 38%;
+    left: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=ltr] body .Testimonial .carousel-control-prev {
+    left: 36%;
   }
 }
 @media (min-width: 992px) {
@@ -927,14 +1079,19 @@ body .Testimonial .carousel-control-prev svg path {
     right: 0;
   }
 }
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 768px) {
   [dir=rtl] body .Testimonial .carousel-control-prev {
-    right: 45.5%;
+    right: 43%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 500px) {
   [dir=rtl] body .Testimonial .carousel-control-prev {
-    right: 38%;
+    right: 41%;
+  }
+}
+@media (max-width: 500px) {
+  [dir=rtl] body .Testimonial .carousel-control-prev {
+    right: 36%;
   }
 }
 @media (min-width: 992px) {
@@ -974,12 +1131,18 @@ body .Testimonial hr {
 }
 body .caseStudy .viewMore {
   background-color: white;
-  border-radius: 1.5rem;
+  border-radius: 100px;
   border: #d5dae1 solid 1px;
-  padding: 10px 15px;
+  padding: 16px 25px;
   color: #1d1d35;
   font-size: 16px;
   font-weight: 500;
+}
+body .caseStudy .viewMore:hover {
+  background-color: #1d1d35;
+  color: white !important;
+  border-color: #1d1d35;
+  transform: scale(1.05);
 }
 body .caseStudy .head h3 {
   color: #1d1d35;
@@ -1130,6 +1293,10 @@ body .caseStudy .oneCard .cardBody .title {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
+}
+body .caseStudy .oneCard .cardBody .title:hover {
+  text-decoration: underline;
 }
 body .caseStudy .oneCard .cardBody .mainPost {
   color: #333f51;
@@ -1202,19 +1369,23 @@ body .FAQ .accordion .accordion-item .accordion-button:not(.collapsed) {
 }
 body .FAQ .viewMore {
   background-color: white;
-  border-radius: 1.5rem;
+  border-radius: 100px;
   border: #d5dae1 solid 1px;
-  padding: 10px 15px;
+  padding: 20px 23px;
   color: #1d1d35;
   font-size: 16px;
   font-weight: 500;
 }
+body .FAQ .viewMore:hover {
+  background-color: #1d1d35;
+  color: white !important;
+  border-color: #1d1d35;
+  transform: scale(1.05);
+}
 body .getStarted {
   gap: 2.5rem;
-  margin-bottom: -25%;
-}
-body .getStarted img {
   z-index: -1;
+  margin-bottom: -25%;
 }
 @media (min-width: 992px) {
   body .getStarted .subHead {
@@ -1224,30 +1395,45 @@ body .getStarted img {
 body .getStarted .arrow {
   position: absolute;
 }
-[dir=ltr] body .getStarted .arrow {
-  top: 72px;
+@media (min-width: 1300px) {
+  [dir=ltr] body .getStarted .arrow {
+    left: 23%;
+    top: 72px;
+  }
 }
-[dir=rtl] body .getStarted .arrow {
-  top: 50px;
+@media (max-width: 1300px) and (min-width: 1200px) {
+  [dir=ltr] body .getStarted .arrow {
+    left: 19%;
+    top: 72px;
+  }
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+  [dir=ltr] body .getStarted .arrow {
+    left: 15%;
+    top: 100px;
+  }
 }
 @media (min-width: 1300px) {
-  body .getStarted .arrow {
-    left: 25%;
+  [dir=rtl] body .getStarted .arrow {
+    top: 50px;
+    left: 22%;
   }
 }
-@media (max-width: 1300px) and (min-width: 1100px) {
-  body .getStarted .arrow {
-    left: 20%;
+@media (max-width: 1300px) and (min-width: 1200px) {
+  [dir=rtl] body .getStarted .arrow {
+    top: 70px;
+    left: 18%;
   }
 }
-@media (max-width: 1100px) and (min-width: 992px) {
-  body .getStarted .arrow {
-    left: 15%;
+@media (max-width: 1200px) and (min-width: 992px) {
+  [dir=rtl] body .getStarted .arrow {
+    top: 73px;
+    left: 12%;
   }
 }
 body .getStarted .star {
   position: absolute;
-  right: 11%;
+  right: 7%;
 }
 [dir=ltr] body .getStarted .star {
   top: 22%;
@@ -1261,13 +1447,13 @@ body .getStarted .shape {
 @media (min-width: 1400px) {
   body .getStarted .shape {
     top: 28%;
-    left: 12%;
+    left: 7%;
   }
 }
 @media (max-width: 1400px) and (min-width: 1200px) {
   body .getStarted .shape {
     top: 28%;
-    left: 4%;
+    left: 0%;
   }
 }
 @media (max-width: 1200px) {
@@ -1277,8 +1463,6 @@ body .getStarted .shape {
 }
 body footer {
   background-color: #1d1d35;
-  z-index: 2;
-  min-height: 450px;
 }
 body footer hr {
   color: rgba(255, 255, 255, 0.5019607843);
@@ -1333,13 +1517,15 @@ body footer .top P {
 }
 body footer .top input {
   border-radius: 3rem;
-  background-color: rgba(243, 244, 245, 0.1019607843);
+  background-color: rgba(243, 244, 245, 0.1);
   padding: 1rem;
   border: 0;
+  color: white !important;
+  caret-color: white;
 }
 body footer .top input:focus {
-  background-color: rgba(243, 244, 245, 0.1019607843);
-  box-shadow: 0 0 0;
+  background-color: rgba(243, 244, 245, 0.1);
+  box-shadow: none;
 }
 body footer .top input::-moz-placeholder {
   color: #ffffff;
@@ -1396,6 +1582,9 @@ body footer .middle .links a {
   font-size: 16px;
   font-weight: 400;
 }
+body footer .middle .icons svg {
+  cursor: pointer;
+}
 @media (min-width: 992px) {
   body footer .middle {
     padding-right: 4rem;
@@ -1418,14 +1607,16 @@ body footer .bottom p {
 }
 body footer .bottom p.underline {
   text-decoration: underline;
+  cursor: pointer;
 }
-body footer .iconCon {
+body .fixedIcon {
   width: 70px;
   height: 70px;
-  position: absolute;
-  right: 5%;
+  position: fixed;
+  right: 3%;
   bottom: 5%;
   padding: 5px;
   border-radius: 50%;
   background-color: #4abb82;
+  z-index: 999;
 }/*# sourceMappingURL=Index.css.map */
